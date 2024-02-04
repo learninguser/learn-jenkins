@@ -7,6 +7,9 @@ pipeline {
     environment {
         JENKINS_URL = "jenkins.learninguser.shop"
     }
+    options {
+        timeout(time: 1, unit: 'SECONDS')
+    }
     // Build stage
     stages {
         stage('Build'){
@@ -20,7 +23,9 @@ pipeline {
         }
         stage('Test'){
             steps {
-                echo 'Testing...'
+                sh """
+                    sleep 2
+                """
             }
         }
         stage('Deploy'){
