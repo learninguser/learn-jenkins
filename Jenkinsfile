@@ -8,7 +8,7 @@ pipeline {
         JENKINS_URL = "jenkins.learninguser.shop"
     }
     options {
-        timeout(time: 1, unit: 'SECONDS')
+        timeout(time: 10, unit: 'SECONDS')
         disableConcurrentBuilds()
     }
     parameters {
