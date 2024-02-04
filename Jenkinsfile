@@ -4,11 +4,18 @@ pipeline {
             label 'agent-1'
         }
     }
+    environment {
+        JENKINS_URL = "jenkins.learninguser.shop"
+    }
     // Build stage
     stages {
         stage('Build'){
             steps {
-                echo 'Building...'
+                sh """
+                    echo "${JENKINS_URL}"
+                    // to show all environment variables
+                    env
+                """
             }
         }
         stage('Test'){
