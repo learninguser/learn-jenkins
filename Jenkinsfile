@@ -24,7 +24,6 @@ pipeline {
             steps {
                 sh """
                     echo "${JENKINS_URL}"
-                    // to show all environment variables
                     env
                 """
             }
